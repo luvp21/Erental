@@ -9,6 +9,8 @@ import ChatbotButton from "../components/ChatbotButton"
 import ChatbotWindow from "../components/ChatbotWindow"
 import QRCode from "qrcode.react"
 
+const API_URL = process.env.API_URL || "http://localhost:5000";
+
 // Define a default guest user state structure
 const guestUserData = {
   _id: null,

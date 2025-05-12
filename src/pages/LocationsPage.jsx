@@ -4,6 +4,8 @@ import { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
 import { MapPin, XCircle, Search, Loader, AlertCircle } from "lucide-react"
 
+const API_URL = process.env.API_URL || "http://localhost:5000";
+
 function LocationsPage() {
   const [stations, setStations] = useState([])
   const [loading, setLoading] = useState(true)

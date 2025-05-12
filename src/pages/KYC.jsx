@@ -4,6 +4,8 @@ import axios from "axios";
 import toast from "react-hot-toast";
 import { Loader2, ArrowLeft, CheckCircle, RefreshCw } from "lucide-react";
 
+const API_URL = process.env.API_URL || "http://localhost:5000";
+
 function KYC() {
     const navigate = useNavigate();
     const [loading, setLoading] = useState(false);

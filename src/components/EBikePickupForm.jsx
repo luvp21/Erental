@@ -4,6 +4,8 @@ import { useState, useEffect } from "react"
 import QRScanner from "./QRScanner"
 import toast from "react-hot-toast"
 
+const API_URL = process.env.API_URL || "http://localhost:5000";
+
 const EBikePickupForm = () => {
   const [showQRScanner, setShowQRScanner] = useState(false)
   const [isVerified, setIsVerified] = useState(false)

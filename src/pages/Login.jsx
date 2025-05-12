@@ -6,6 +6,8 @@ import { LogIn, Mail, Lock, AlertCircle, Loader } from "lucide-react"
 import axios from "axios"
 import toast from "react-hot-toast"
 
+const API_URL = process.env.API_URL || "http://localhost:5000";
+
 function Login() {
   const navigate = useNavigate()
   const [formData, setFormData] = useState({

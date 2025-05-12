@@ -4,6 +4,8 @@ import { useState, useEffect } from "react"
 import { useParams, Link } from "react-router-dom"
 import { MapPin, BatteryFull, DollarSign, ChevronLeft, Car, Zap, Clock, AlertCircle, Loader } from "lucide-react"
 
+const API_URL = process.env.API_URL || "http://localhost:5000";
+
 function StationVehiclesPage() {
   const { stationId } = useParams()
   const [station, setStation] = useState(null)

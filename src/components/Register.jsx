@@ -8,6 +8,8 @@ import PhoneVerification from "./PhoneVerification";
 import toast from "react-hot-toast";
 import { CheckCircle } from "lucide-react";
 
+const API_URL = process.env.API_URL || "http://localhost:5000";
+
 const Register = () => {
     const [formData, setFormData] = useState({
         name: "",

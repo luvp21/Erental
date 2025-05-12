@@ -6,6 +6,8 @@ import { Calendar, Clock, CreditCard, MapPin, Battery, Info, Check } from "lucid
 import QRCode from "qrcode.react"
 import toast from "react-hot-toast"
 
+const API_URL = process.env.API_URL || "http://localhost:5000";
+
 function BookingPage() {
   const { vehicleId } = useParams()
   const navigate = useNavigate()
