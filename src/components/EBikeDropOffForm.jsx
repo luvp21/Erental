@@ -4,6 +4,9 @@ import { useState, useEffect } from "react"
 import QRScanner from "./QRScanner"
 import toast from "react-hot-toast"
 
+const API_URL = process.env.API_URL || "http://localhost:5000";
+
+
 const EBikeDropOffForm = () => {
   const [showQRScanner, setShowQRScanner] = useState(false)
   const [isVerified, setIsVerified] = useState(false)
@@ -184,7 +187,7 @@ const EBikeDropOffForm = () => {
       setIsSubmitting(true)
       
       // Call the API with the QR code data
-      const response = await fetch("http://localhost:5000/api/admin-pickup", {
+      const response = await fetch(`${API_URL}/api/admin-pickup`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -204,8 +207,8 @@ const EBikeDropOffForm = () => {
       }
 
       const [vehicleResponse, userResponse] = await Promise.all([
-        fetch(`http://localhost:5000/api/vehicle/${data.data.vehicle}`),
-        fetch(`http://localhost:5000/api/users/${data.data.user}`)
+        fetch(`${API_URL}/api/vehicle/${data.data.vehicle}`),
+        fetch(`${API_URL}api/users/${data.data.user}`)
       ])
       
       if (!vehicleResponse.ok || !userResponse.ok) {
@@ -308,7 +311,7 @@ const EBikeDropOffForm = () => {
       });
 
       // Send confirmation to the admin-dropoff-confirm endpoint
-      const confirmResponse = await fetch("http://localhost:5000/api/admin-dropoff-confirm", {
+      const confirmResponse = await fetch(`${API_URL}/api/admin-dropoff-confirm`, {
         method: "POST",
         body: formDataToSend, // Send FormData instead of JSON
       });

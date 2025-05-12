@@ -87,7 +87,7 @@ const Register = () => {
             console.log("Sending registration data:", formDataToSend);
 
             const response = await axios.post(
-                "http://localhost:5000/api/auth/register",
+                `${API_URL}/api/auth/register`,
                 formDataToSend,
                 {
                     headers: {
